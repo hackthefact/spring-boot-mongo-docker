@@ -11,8 +11,10 @@ spec:
       labels:
         name: springboot
     spec:
+      imagePullSecrets:
+      - name: dockerreposecret
       containers:
-      - image: ankur20055/spring-boot-mongo-docker:8
+      - image: 192.10.1.151:8083/spring-boot-mongo
         name: springboot
         ports:
         - name: springboot
@@ -76,4 +78,3 @@ spec:
       targetPort: 27017
   selector:
     name: mongo
-© 2020 GitHub, Inc.
